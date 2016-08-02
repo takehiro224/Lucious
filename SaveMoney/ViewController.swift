@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //テーブルビュー
     @IBOutlet weak var tableView: UITableView!
     
+    //保存履歴情報リスト
     var historyList = [MyData]()
     
     //読み込み処理
@@ -29,12 +30,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
 
-    /**
-    [+]ボタンがタップされた時の処理
-    */
+    /// [+]ボタンがタップされた時の処理
+    /// - parameter sender: 1つ目の引数。
     @IBAction func tapAddButton(sender: AnyObject) {
         //アラートダイアログ生成
-        let alertController = UIAlertController(title: "お小遣い登録", message: "支出または収入を登録してください", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "お小遣い管理", message: "支出または収入を登録してください", preferredStyle: UIAlertControllerStyle.Alert)
         
         //アラートダイアログにテキストエリアを追加
         alertController.addTextFieldWithConfigurationHandler(nil)
